@@ -16,3 +16,13 @@ $ cd my-project
 ```
 $ find . -name ".git" | xargs rm -Rf
 ```
+
+第一次安装依赖
+```
+$ sudo npm install
+```
+
+启动，成功后会弹出浏览器窗口
+```
+$ sudo npm start
+```

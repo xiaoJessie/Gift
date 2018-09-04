@@ -107,8 +107,8 @@ class SearchList extends Component {
                 <Icon type="loading" /> 加载中...
               </span>
             ) : (
-              '加载更多'
-            )}
+                '加载更多'
+              )}
           </Button>
         </div>
       ) : null;
@@ -225,9 +225,7 @@ class SearchList extends Component {
                   }
                   description={
                     <span>
-                      <Tag>Ant Design</Tag>
-                      <Tag>设计语言</Tag>
-                      <Tag>蚂蚁金服</Tag>
+                      <Tag>Design</Tag>
                     </span>
                   }
                 />
