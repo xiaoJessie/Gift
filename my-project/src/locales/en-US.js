@@ -2,6 +2,7 @@ export default {
   'navbar.lang': '中文',
   'menu.home': 'Home',
   'menu.dashboard': 'Dashboard',
+  'menu.dashboard.newpage': 'New Page test',
   'menu.dashboard.analysis': 'Analysis',
   'menu.dashboard.monitor': 'Monitor',
   'menu.dashboard.workplace': 'Workplace',
