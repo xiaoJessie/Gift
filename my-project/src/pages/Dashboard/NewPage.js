@@ -11,18 +11,45 @@ import styles from './NewPage.less';
     loading: loading.effects['chart/fetch'],
 }))
 
-class NewPage extends Component {
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { date: new Date() };
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
 
     render() {
-        const element = (
+        return (
             <div>
                 <h1>Hello, world!</h1>
-                <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );
+    }
+}
+
+
+class NewPage extends Component {
+    render() {
         return (
             <Card>
-                {element}
+                <Clock />
             </Card>
         );
     }
