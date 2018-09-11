@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { formatMessage, FormattedMessage } from 'umi/locale';
-import { Card } from 'antd';
+import { Card, Switch } from 'antd';
 
 import styles from './NewPage.less';
 
@@ -14,8 +14,14 @@ import styles from './NewPage.less';
 class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { date: new Date() };
+        this.state = { date: new Date(), checked: true };
     }
+
+    onSwitch = checked => {
+        this.setState({
+            checked
+        });
+    };
 
     tick() {
         this.setState({
@@ -39,6 +45,21 @@ class Clock extends React.Component {
             <div>
                 <h1>Hello, world!</h1>
                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                <h2 >
+                    <span>
+                        <Switch
+                            checkedChildren={'on'}
+                            unCheckedChildren={'off'}
+                            defaultChecked
+                            onChange={this.onSwitch}>
+                        </Switch>
+                    </span>
+                    <span>
+                        点击开关  {this.state.checked ? '显示' : '隐藏'}.
+                    </span>
+                </h2>
+
+
             </div>
         );
     }
