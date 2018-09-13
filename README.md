@@ -20,6 +20,18 @@ $ npm start
 ```
 在浏览器里打开 http://localhost:8000 ，你会看到 dva 的欢迎界面。
 
+使用antd, babel-plugin-import 是用来按需加载 antd 的脚本和样式的
+```
+$ npm install antd babel-plugin-import --save
+```
+编辑 .webpackrc，使 babel-plugin-import 插件生效。
+```
+{
++  "extraBabelPlugins": [
++    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
++  ]
+}
+```
 
 
 
